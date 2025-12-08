@@ -36,26 +36,26 @@ This is a mini Ride Sharing backend built with Spring Boot, MongoDB, and JWT Aut
 
 ## running the application
 1. Ensure MongoDB is running.
-39: 2. Run `./mvnw spring-boot:run`
-40:
-41: ## How to Test (Using Command Prompt)
-42: Open `cmd.exe` and use these commands:
-43:
-44: **1. Register User**
-45: ```cmd
-46: curl -X POST http://localhost:8081/api/auth/register -H "Content-Type: application/json" -d "{\"username\":\"john\",\"password\":\"1234\",\"role\":\"ROLE_USER\"}"
-47: ```
-48:
-49: **2. Login**
-50: ```cmd
-51: curl -X POST http://localhost:8081/api/auth/login -H "Content-Type: application/json" -d "{\"username\":\"john\",\"password\":\"1234\"}"
-52: ```
-53: *Copy the token from the response!*
-54:
-55: **3. Create Ride**
-56: ```cmd
-57: curl -X POST http://localhost:8081/api/v1/rides -H "Authorization: Bearer <PASTE_TOKEN>" -H "Content-Type: application/json" -d "{\"pickupLocation\":\"Mall\",\"dropLocation\":\"Home\"}"
-58: ```
+2. Run `./mvnw spring-boot:run`
+
+## How to Test (Using Command Prompt)
+Open `cmd.exe` and use these commands:
+
+**1. Register User**
+```cmd
+curl -X POST http://localhost:8081/api/auth/register -H "Content-Type: application/json" -d "{\"username\":\"john\",\"password\":\"1234\",\"role\":\"ROLE_USER\"}"
+```
+
+**2. Login**
+```cmd
+curl -X POST http://localhost:8081/api/auth/login -H "Content-Type: application/json" -d "{\"username\":\"john\",\"password\":\"1234\"}"
+```
+*Copy the token from the response!*
+
+**3. Create Ride**
+```cmd
+curl -X POST http://localhost:8081/api/v1/rides -H "Authorization: Bearer <PASTE_TOKEN>" -H "Content-Type: application/json" -d "{\"pickupLocation\":\"Mall\",\"dropLocation\":\"Home\"}"
+```
 
 ## Project Structure
 - `org.example.rideshare.config` - Security & JWT configs
