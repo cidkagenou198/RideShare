@@ -57,6 +57,36 @@ curl -X POST http://localhost:8081/api/auth/login -H "Content-Type: application/
 curl -X POST http://localhost:8081/api/v1/rides -H "Authorization: Bearer <PASTE_TOKEN>" -H "Content-Type: application/json" -d "{\"pickupLocation\":\"Mall\",\"dropLocation\":\"Home\"}"
 ```
 
+## 9️⃣ CURL Commands for Basic Testing
+
+### Register USER
+```bash
+curl -X POST http://localhost:8081/api/auth/register \
+-H "Content-Type: application/json" \
+-d '{"username":"john","password":"1234","role":"ROLE_USER"}'
+```
+
+### Register DRIVER
+```bash
+curl -X POST http://localhost:8081/api/auth/register \
+-H "Content-Type: application/json" \
+-d '{"username":"driver1","password":"abcd","role":"ROLE_DRIVER"}'
+```
+
+### Login
+```bash
+curl -X POST http://localhost:8081/api/auth/login \
+-H "Content-Type: application/json" \
+-d '{"username":"john","password":"1234"}'
+```
+
+### Create Ride
+```bash
+curl -X POST http://localhost:8081/api/v1/rides \
+-H "Authorization: Bearer <token>" \
+-d '{"pickupLocation":"A","dropLocation":"B"}'
+```
+
 ## Project Structure
 - `org.example.rideshare.config` - Security & JWT configs
 - `org.example.rideshare.controller` - API Endpoints
